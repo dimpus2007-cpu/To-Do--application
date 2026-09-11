@@ -1,0 +1,567 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: #0f172a;
+
+    color: #e5e7eb;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+
+    padding: 60px 20px;
+}
+
+
+/* =========================
+   MAIN APP
+========================= */
+
+.app-container {
+    width: 100%;
+    max-width: 790px;
+
+    background: #22314a;
+
+    border-radius: 24px;
+
+    padding: 48px 36px;
+
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.app-header {
+    text-align: center;
+
+    margin-bottom: 38px;
+}
+
+.app-header h1 {
+    font-size: 48px;
+
+    font-weight: 700;
+
+    color: #3b82f6;
+
+    margin-bottom: 20px;
+}
+
+.app-header p {
+    font-size: 18px;
+
+    color: #9fb0c8;
+}
+
+
+/* =========================
+   ADD TASK
+========================= */
+
+.add-task-section {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: #0f172a;
+
+    padding: 14px;
+
+    border-radius: 18px;
+
+    margin-bottom: 26px;
+}
+
+#taskInput {
+    flex: 1;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #ffffff;
+
+    font-size: 18px;
+
+    padding: 12px 14px;
+}
+
+#taskInput::placeholder {
+    color: #718096;
+}
+
+
+/* Add button */
+
+#addTaskBtn {
+    border: none;
+
+    background: #3b82f6;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    padding: 15px 25px;
+
+    border-radius: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+#addTaskBtn:hover {
+    background: #2563eb;
+
+    transform: translateY(-2px);
+}
+
+#addTaskBtn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   FILTERS
+========================= */
+
+.task-controls {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 18px;
+}
+
+.filters {
+    display: flex;
+
+    gap: 8px;
+}
+
+.filter-btn {
+    border: none;
+
+    background: transparent;
+
+    color: #9fb0c8;
+
+    font-size: 16px;
+
+    padding: 10px 16px;
+
+    border-radius: 20px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.filter-btn:hover {
+    color: white;
+
+    background: rgba(59, 130, 246, 0.1);
+}
+
+.filter-btn.active {
+    background: #3b82f6;
+
+    color: white;
+
+    font-weight: 600;
+}
+
+
+/* Task count */
+
+#taskCount {
+    color: #9fb0c8;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   CLEAR COMPLETED
+========================= */
+
+.clear-container {
+    margin-bottom: 20px;
+}
+
+.clear-btn {
+    border: 1px solid #475569;
+
+    background: transparent;
+
+    color: #9fb0c8;
+
+    padding: 9px 14px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.clear-btn:hover {
+    border-color: #ef4444;
+
+    color: #f87171;
+
+    background: rgba(239, 68, 68, 0.08);
+}
+
+
+/* =========================
+   TASK LIST
+========================= */
+
+#taskList {
+    list-style: none;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+/* =========================
+   TASK ITEM
+========================= */
+
+.task-item {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+
+    background: #162238;
+
+    border: 1px solid #293b57;
+
+    padding: 15px;
+
+    border-radius: 14px;
+
+    transition: 0.2s ease;
+}
+
+.task-item:hover {
+    border-color: #3b82f6;
+
+    transform: translateY(-1px);
+}
+
+
+/* Checkbox */
+
+.task-checkbox {
+    width: 20px;
+
+    height: 20px;
+
+    accent-color: #3b82f6;
+
+    cursor: pointer;
+
+    flex-shrink: 0;
+}
+
+
+/* Task text */
+
+.task-text {
+    flex: 1;
+
+    color: #e5e7eb;
+
+    font-size: 17px;
+
+    line-height: 1.4;
+
+    word-break: break-word;
+}
+
+
+/* Completed task */
+
+.task-item.completed .task-text {
+    text-decoration: line-through;
+
+    color: #64748b;
+}
+
+
+/* =========================
+   TASK ACTION BUTTONS
+========================= */
+
+.task-actions {
+    display: flex;
+
+    gap: 7px;
+}
+
+.action-btn {
+    border: none;
+
+    width: 36px;
+
+    height: 36px;
+
+    border-radius: 9px;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+.edit-btn {
+    background: rgba(59, 130, 246, 0.12);
+
+    color: #60a5fa;
+}
+
+.edit-btn:hover {
+    background: #3b82f6;
+
+    color: white;
+}
+
+.delete-btn {
+    background: rgba(239, 68, 68, 0.1);
+
+    color: #f87171;
+}
+
+.delete-btn:hover {
+    background: #ef4444;
+
+    color: white;
+}
+
+
+/* =========================
+   EDIT INPUT
+========================= */
+
+.edit-input {
+    flex: 1;
+
+    background: #0f172a;
+
+    border: 1px solid #3b82f6;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    color: white;
+
+    font-size: 16px;
+
+    padding: 9px 12px;
+}
+
+
+/* =========================
+   EMPTY STATE
+========================= */
+
+.empty-state {
+    text-align: center;
+
+    padding: 65px 20px 35px;
+
+    color: #94a3b8;
+}
+
+.empty-icon {
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.empty-state h3 {
+    font-size: 20px;
+
+    color: #94a3b8;
+
+    margin-bottom: 18px;
+}
+
+.empty-state p {
+    font-size: 17px;
+
+    color: #94a3b8;
+}
+
+
+/* =========================
+   HIDDEN
+========================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 650px) {
+
+    body {
+        padding: 20px 12px;
+    }
+
+    .app-container {
+        padding: 32px 18px;
+
+        border-radius: 18px;
+    }
+
+    .app-header h1 {
+        font-size: 34px;
+    }
+
+    .app-header p {
+        font-size: 16px;
+    }
+
+    .add-task-section {
+        gap: 8px;
+
+        padding: 9px;
+    }
+
+    #taskInput {
+        font-size: 16px;
+
+        min-width: 0;
+    }
+
+    #addTaskBtn {
+        padding: 12px 15px;
+    }
+
+    .task-controls {
+        align-items: flex-start;
+
+        gap: 10px;
+
+        flex-direction: column;
+    }
+
+    .filters {
+        width: 100%;
+
+        justify-content: space-between;
+    }
+
+    .filter-btn {
+        font-size: 14px;
+
+        padding: 8px 11px;
+    }
+
+    .task-item {
+        align-items: flex-start;
+    }
+
+    .task-actions {
+        flex-direction: column;
+    }
+}
+
+
+/* =========================
+   VERY SMALL SCREENS
+========================= */
+
+@media (max-width: 400px) {
+
+    .app-header h1 {
+        font-size: 29px;
+    }
+
+    .add-task-section {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+    #addTaskBtn {
+        width: 100%;
+    }
+
+    .filters {
+        gap: 3px;
+    }
+
+    .filter-btn {
+        padding: 8px;
+    }
+}
+/* Professional action icons */
+
+.action-btn svg {
+    width: 18px;
+    height: 18px;
+
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+
+    stroke-linecap: round;
+    stroke-linejoin: round;
+
+    display: block;
+    margin: auto;
+}
