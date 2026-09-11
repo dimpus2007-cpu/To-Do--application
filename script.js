@@ -27,7 +27,8 @@ let tasks = JSON.parse(
     localStorage.getItem("todoTasks")
 ) || [];
 
-let currentFilter = "all";
+let currentFilter =
+    localStorage.getItem("todoFilter") || "all";
 
 
 /* =========================
@@ -383,6 +384,11 @@ function changeFilter(filter) {
 
     currentFilter = filter;
 
+    localStorage.setItem(
+        "todoFilter",
+        currentFilter
+    );
+
 
     // Remove active class
     filterButtons.forEach(button => {
@@ -455,4 +461,4 @@ clearCompletedBtn.addEventListener(
    INITIAL LOAD
 ========================= */
 
-renderTasks();
+changeFilter(currentFilter);
